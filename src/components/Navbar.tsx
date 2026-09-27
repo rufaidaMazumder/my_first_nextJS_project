@@ -24,12 +24,18 @@ export default function Navbar() {
         <Link href="/my-plan" className={linkClass("/my-plan")}>My Plan</Link>
       </div>
 
-      <div className="navbar-end gap-2">
-        <Link href="/my-plan" className="badge badge-primary gap-1.5 py-3 px-3">
-          Plan <span className="bg-black/20 rounded-full px-1.5">{plan.length}</span>
+      <div className="navbar-end gap-4 text-sm">
+        <Link href="/my-plan" className="flex items-center gap-2 text-white">
+          Plan
+          <span className="w-5 h-5 flex items-center justify-center rounded-full bg-primary text-primary-content text-xs font-bold">
+            {plan.length}
+          </span>
         </Link>
-        <Link href="/my-plan" className="badge badge-outline gap-1.5 py-3 px-3">
-          Saved <span>{saved.length}</span>
+        <Link href="/my-plan" className="flex items-center gap-2 text-gray-400">
+          Saved
+          <span className="w-5 h-5 flex items-center justify-center rounded-full border border-gray-500 text-xs">
+            {saved.length}
+          </span>
         </Link>
       </div>
     </div>
