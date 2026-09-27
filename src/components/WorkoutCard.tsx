@@ -1,7 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Workout } from "@/types";
-import cardImage from "@/assets/cardImage.jpeg";
 
 export default function WorkoutCard({ workout }: { workout: Workout }) {
   return (
@@ -10,11 +8,10 @@ export default function WorkoutCard({ workout }: { workout: Workout }) {
       className="card bg-base-200 border border-base-300 hover:-translate-y-1 hover:border-primary/50 transition-all duration-200 group"
     >
       <figure className="relative h-40 overflow-hidden">
-        <Image
-          src={cardImage}
+        <img
+          src={workout.image}
           alt={workout.name}
-          fill
-          className="object-cover group-hover:scale-110 transition-transform duration-300"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
         />
       </figure>
 
