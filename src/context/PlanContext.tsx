@@ -7,6 +7,7 @@ import { Workout, PlanWorkout } from "@/types";
 interface PlanContextType {
   plan: PlanWorkout[];
   saved: Workout[];
+  isHydrated: boolean;
   addToPlan: (workout: Workout) => void;
   addToSaved: (workout: Workout) => void;
   removeFromPlan: (id: number) => void;
@@ -35,11 +36,15 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (isHydrated) localStorage.setItem("fitlog-plan", JSON.stringify(plan));
+    if (isHydrated) {
+      localStorage.setItem("fitlog-plan", JSON.stringify(plan));
+    }
   }, [plan, isHydrated]);
 
   useEffect(() => {
-    if (isHydrated) localStorage.setItem("fitlog-saved", JSON.stringify(saved));
+    if (isHydrated) {
+      localStorage.setItem("fitlog-saved", JSON.stringify(saved));
+    }
   }, [saved, isHydrated]);
 
   const addToPlan = (workout: Workout) => {
@@ -88,7 +93,15 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
   };
 
   const value: PlanContextType = {
-    plan, saved, addToPlan, addToSaved, removeFromPlan, removeFromSaved, markAsDone, metrics,
+    plan,
+    saved,
+    isHydrated,
+    addToPlan,
+    addToSaved,
+    removeFromPlan,
+    removeFromSaved,
+    markAsDone,
+    metrics,
   };
 
   return <PlanContext.Provider value={value}>{children}</PlanContext.Provider>;
@@ -96,6 +109,8 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
 
 export function usePlan() {
   const context = useContext(PlanContext);
-  if (!context) throw new Error("usePlan must be used within a PlanProvider");
+  if (!context) {
+    throw new Error("usePlan must be used within a PlanProvider");
+  }
   return context;
 }
