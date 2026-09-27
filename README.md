@@ -1,4 +1,4 @@
-#FitLog
+# FitLog
 FitLog is a workout planning website built with Next.js. It allows users to browse different workouts, check workout details, and create their own daily workout plan.
 
 Users can view information such as equipment, difficulty, sets, reps, duration, calories, rating, and step-by-step instructions. They can add workouts to Today’s Plan or save them for later. The My Plan page also shows the total exercises, workout time, and calories, and users can sort their workouts based on duration, calories, or rating. The plan and saved workouts are stored in localStorage, so they stay available even after refreshing the page.
