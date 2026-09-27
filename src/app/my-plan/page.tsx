@@ -46,7 +46,7 @@ export default function MyPlanPage() {
       <div className="flex items-center justify-between mb-6">
         <div className="tabs tabs-boxed bg-base-200">
           <a className={planTabClass} onClick={() => setActiveTab("plan")}>
-            Today is Plan
+            Todays Plan
           </a>
           <a className={savedTabClass} onClick={() => setActiveTab("saved")}>
             Saved
