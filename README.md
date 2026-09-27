@@ -27,7 +27,7 @@ Users can view information such as equipment, difficulty, sets, reps, duration, 
 
 ## Live Link
 
-fit-log-zeta-ten.vercel.app
+https://fit-log-zeta-ten.vercel.app
 
 ## GitHub Repository
 
